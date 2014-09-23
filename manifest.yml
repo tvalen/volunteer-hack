@@ -1,0 +1,15 @@
+applications:
+- name: volunteer-hack
+  mem: 128M
+  buildpack: https://github.com/ActiveState/stackato-buildpack-python
+  services:
+    ${name}-db:
+      type: mysql
+  url: volunteer-hack.15.126.231.221.xip.io
+  stackato:
+    env:
+        SOMEVAR: 1
+    min_version:
+        client: 1.4.3
+    hooks:
+        post-staging: python create_populate_db.py
