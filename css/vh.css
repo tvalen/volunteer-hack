@@ -1,0 +1,16 @@
+body {
+	background-color: #E4E4E2;
+}
+
+header {
+	margin-top: 10em;
+}
+
+h1, h5 {
+	color: #6B5463;
+}
+
+button {
+	margin: 3em;
+	width: 12em;
+}
