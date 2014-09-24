@@ -1,7 +1,7 @@
 applications:
 - name: volunteer-hack
-  mem: 128M
-  buildpack: https://github.com/ActiveState/stackato-buildpack-python
+  mem: 256M
+  buildpack: https://github.com/ActiveState/heroku-buildpack-php.git
   services:
     ${name}-db:
       type: mysql
@@ -12,4 +12,6 @@ applications:
     min_version:
         client: 1.4.3
     hooks:
-        post-staging: python create_populate_db.py
+        post-staging: php www/db.php
+
+
